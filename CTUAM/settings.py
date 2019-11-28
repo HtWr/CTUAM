@@ -16,10 +16,12 @@ import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 设置本地extra_apps路径
 sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 
+# 设置静态文件访问目录
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
@@ -91,12 +93,12 @@ WSGI_APPLICATION = 'CTUAM.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
-        'NAME': 'CTUAM',  # 数据库名，先前创建的
-        'USER': 'root',     # 用户名，可以自己创建用户
+        'ENGINE': 'django.db.backends.mysql',   # Mysql数据库引擎
+        'NAME': 'CTUAM',  # 数据库名
+        'USER': 'root',     # 用户名
         'PASSWORD': 'It12345678',  # 密码
-        'HOST': '127.0.0.1',  # mysql服务所在的主机ip
-        'PORT': '3306',         # mysql服务端口
+        'HOST': '127.0.0.1',  # mysql服务ip
+        'PORT': '3306',         # mysql端口
     }
 }
 
@@ -123,8 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
+# 网站设置语言 汉语为'zh-hans'
 LANGUAGE_CODE = 'zh-hans'
 
+# 设置时区
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True

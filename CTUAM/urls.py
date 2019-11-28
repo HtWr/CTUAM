@@ -28,5 +28,5 @@ urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     path('', xadmin.site.urls),
     url(r'^static/(?P<path>.*)$', static.serve,
-        {'document_root': settings.STATIC_ROOT}, name='static'),
+        {'document_root': settings.STATIC_ROOT}, name='static'), #静态路由设置
 ]
